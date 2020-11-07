@@ -8,8 +8,12 @@
 
 using namespace std;
 
-extern array<array<char, 26>, 26> matryca;
+extern array<array<char, 26>, 26> matryca;/**This makes sure the header file understands the global variable "matryca"*/
 
+/**
+* The function fills the a matrix with consecutive letters starting with "a" for the first row, then with "b" for the second row ... with "z" for the last row until "z" and then fills the rest from "a" again so that every line has 26 elements.
+* @param mat the char matrix to be filled
+*/
 void fill(array<array<char, 26>, 26>& mat) {
 
     int k = 0;
@@ -31,6 +35,11 @@ void fill(array<array<char, 26>, 26>& mat) {
     }
 }
 
+/**
+* The function reads and returns the content of a file.
+* @param fName the name of the file
+* @return string the content of the file
+*/
 string readFile(string fName)
 {
     string tmp1, tmp2;
@@ -54,6 +63,11 @@ string readFile(string fName)
     return tmp2;
 }
 
+/**
+* The function writes a string text to a file.
+* @param fName the name of the file
+* @param content the text that should be written into a file
+*/
 void writeFile(string fName, string content)
 {
     string tmp1, tmp2;
@@ -70,6 +84,12 @@ void writeFile(string fName, string content)
     }
 }
 
+/**
+* The function makes sure the key is long enough to be used and returns the key.
+* @param key the content of the key
+* @param input the content of the text to be encrypted(to match it's lenght)
+* @return string with the prepared key
+*/
 string prepareKey(string key, string input)
 {
     string fKey;
@@ -96,6 +116,11 @@ string prepareKey(string key, string input)
     return fKey;
 }
 
+/**
+* The function returns the index of the collumn in which the letter is found in the first row.
+* @param letter the letter to be found
+* @return int with the index of the collumn
+*/
 int col(char letter)//pionowe
 {
     for (int i = 0; i < 26; i++)
@@ -108,6 +133,11 @@ int col(char letter)//pionowe
     return 0;
 }
 
+/**
+* The function returns the index of the row in which the letter is found int the first collumn.
+* @param letter the letter to be found
+* @return int with the index of the row
+*/
 int row(char letter)
 {
     for (int i = 0; i < 26; i++)
@@ -120,6 +150,11 @@ int row(char letter)
     return 0;
 }
 
+/**
+* The function returns the index of the row in which the letter was found in a collumn.
+* @param letter the letter to be found
+* @return int with the index of the row
+*/
 int letterInCollumn(char letter, int col)
 {
     int pos;
@@ -133,6 +168,12 @@ int letterInCollumn(char letter, int col)
     return pos;
 }
 
+/**
+* The function encrypts the given text using the prepared key.
+* @param the prepared key
+* @param text to be encrypted
+* @return string with the encrypted text
+*/
 string encrypting(string key, string input)
 {
     string encryptet;
@@ -154,6 +195,12 @@ string encrypting(string key, string input)
     return encryptet;
 }
 
+/**
+* The function decrypts the given text using the prepared key.
+* @param key the prepared key
+* @param input text to be decrypted
+* @return string with the decrypted text
+*/
 string decrypting(string key, string input)
 {
     string decrypted;
@@ -175,13 +222,16 @@ string decrypting(string key, string input)
     return decrypted;
 }
 
+/**
+* The function displays the proper way the program is supposed to be used.
+*/
 void help()
 {
     cout << endl;
     cout << "#######################################" << endl;
     cout << "Displaying help:" << endl;
     cout << "This program is used to encrypt and decrypt a text with the Vigenere method." << endl;
-    cout << "It can be also used to break the ciphered text without the key" << endl;
+    cout << "It can be also used to break the ciphered text without the key." << endl;
 
     cout << "To encrypt use: " << endl;
     cout << "main.exe --en -i input-file.txt -o output-file.txt -k key.txt" << endl << endl;
