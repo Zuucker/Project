@@ -95,3 +95,40 @@ string prepareKey(string key, string input)
 
     return fKey;
 }
+
+int col(char letter)//pionowe
+{
+    for (int i = 0; i < 26; i++)
+    {
+        if (letter == matryca[i][0])
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
+int row(char letter)
+{
+    for (int i = 0; i < 26; i++)
+    {
+        if (letter == matryca[0][i])
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
+int letterInCollumn(char letter, int col)
+{
+    int pos;
+    for (int i = 0; i < 26; i++)
+    {
+        if (matryca[i][col] == letter)
+        {
+            pos = i;
+        }
+    }
+    return pos;
+}
