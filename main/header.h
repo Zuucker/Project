@@ -153,3 +153,24 @@ string encrypting(string key, string input)
     encryptet += ' ';
     return encryptet;
 }
+
+string decoding(string key, string input)
+{
+    string decrypted;
+    for (unsigned int i = 0; i < input.length() - 1; i++)
+    {
+        if (input[i] != ' ' || key[i] != ' ')
+        {
+            int c = col(key[i]);
+            int r = letterInCollumn(input[i], c);
+
+            decrypted += matryca[0][r];
+        }
+        else {
+            decrypted += ' ';
+        }
+
+    }
+    decrypted += ' ';
+    return decrypted;
+}
