@@ -14,13 +14,13 @@ int main(int argc, char* argv[])
     bool h = false;
 
 
-    if (argc == 1)
+    if (argc == 1)/** if the program is run without arguments it displays help.*/
     {
         help();
     }
     else
     {
-        for (int i = 1; i < argc; i++)
+        for (int i = 1; i < argc; i++)/** The program assigns the values depenting of the provided flags.*/
         {
             if (string(argv[i]) == "--en")
             {
@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
 
 
 
-    if (inputName == "")
+    if (inputName == "")/** If the needed file isn't provided the program displays a messege and help.*/
     {
         if (argc != 1 && h == false)
         {
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
         }
     }
     else {
-        if (operation == 1)
+        if (operation == 1)/** Depending of the flag the program does one of the 3 operations:encrypting, decrypting or breaking.*/
         {
             if (keyName == "" || outputName == "")
             {
@@ -99,10 +99,10 @@ int main(int argc, char* argv[])
         }
         else if (operation == 3)
         {
-            
-
+            ///not finished, I didn't know how to do the rest.
+            cout << "Sorry, not implemented.";
         }
-        else if (operation == 0)
+        else if (operation == 0)/** If the needed flags aren't provided the program displays a messege and help.*/
         {
             cout << "Please provide a correct flag!";
             help();
