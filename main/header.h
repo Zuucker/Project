@@ -154,7 +154,7 @@ string encrypting(string key, string input)
     return encryptet;
 }
 
-string decoding(string key, string input)
+string decrypting(string key, string input)
 {
     string decrypted;
     for (unsigned int i = 0; i < input.length() - 1; i++)
@@ -173,4 +173,26 @@ string decoding(string key, string input)
     }
     decrypted += ' ';
     return decrypted;
+}
+
+void help()
+{
+    cout << endl;
+    cout << "#######################################" << endl;
+    cout << "Displaying help:" << endl;
+    cout << "This program is used to encrypt and decrypt a text with the Vigenere method." << endl;
+    cout << "It can be also used to break the ciphered text without the key" << endl;
+
+    cout << "To encrypt use: " << endl;
+    cout << "main.exe --en -i input-file.txt -o output-file.txt -k key.txt" << endl << endl;
+
+    cout << "To decrypt use: " << endl;
+    cout << "main.exe --de -i input-file.txt -o output-file.txt -k key.txt" << endl << endl;
+
+    cout << "To break ciphered text witout a key use: " << endl;
+    cout << "main.exe --br -i input-file.txt" << endl << endl;
+
+    cout << "#######################################" << endl;
+
+
 }
