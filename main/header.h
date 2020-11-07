@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <array>
+#include <string>
+#include <fstream>
+
 
 
 using namespace std;
@@ -25,5 +28,44 @@ void fill(array<array<char, 26>, 26>& mat) {
         k = 0;
 
         nast++;
+    }
+}
+
+string readFile(string fName)
+{
+    string tmp1, tmp2;
+    ifstream file(fName);
+
+    if (file)
+    {
+        while (!file.eof())
+        {
+            getline(file, tmp1);
+            tmp2 += tmp1;
+            tmp2 += " ";
+        }
+        file.close();
+    }
+    else
+    {
+        cout << "File " << fName << " not found!";
+        exit(0);
+    }
+    return tmp2;
+}
+
+void writeFile(string fName, string content)
+{
+    string tmp1, tmp2;
+    ofstream file(fName);
+
+    if (file)
+    {
+        file << content;
+        file.close();
+    }
+    else
+    {
+        cout << "error";
     }
 }
