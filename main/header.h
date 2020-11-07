@@ -69,3 +69,29 @@ void writeFile(string fName, string content)
         cout << "error";
     }
 }
+
+string prepareKey(string key, string input)
+{
+    string fKey;
+    int k = 0;
+
+    for (unsigned int i = 0; i < input.length(); i++)//-1
+    {
+        if (input[i] == ' ')
+        {
+            fKey += " ";
+        }
+        else {
+            fKey += key[k];
+            k++;
+        }
+
+
+        if (k == key.length() - 1)
+        {
+            k = 0;
+        }
+    }
+
+    return fKey;
+}
