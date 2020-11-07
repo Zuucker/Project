@@ -132,3 +132,24 @@ int letterInCollumn(char letter, int col)
     }
     return pos;
 }
+
+string encrypting(string key, string input)
+{
+    string encryptet;
+    for (unsigned int i = 0; i < input.length() - 1; i++)
+    {
+        if (input[i] != ' ' || key[i] != ' ')
+        {
+            int c = col(input[i]);
+            int r = row(key[i]);
+
+            encryptet += matryca[c][r];
+        }
+        else {
+            encryptet += ' ';
+        }
+
+    }
+    encryptet += ' ';
+    return encryptet;
+}
