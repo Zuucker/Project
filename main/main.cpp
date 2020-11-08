@@ -99,8 +99,7 @@ int main(int argc, char* argv[])
         }
         else if (operation == 3)
         {
-            ///not finished, I didn't know how to do the rest.
-            cout << "Sorry, not implemented.";
+            breaking();
         }
         else if (operation == 0)/** If the needed flags aren't provided the program displays a messege and help.*/
         {
