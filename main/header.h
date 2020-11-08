@@ -222,6 +222,17 @@ string decrypting(string key, string input)
     return decrypted;
 }
 
+
+/**
+* The function breakes the ciphered messege without the key.
+*/
+void breaking()
+{
+    ///not finished, I didn't know how to do the rest.
+    cout << "Sorry, not implemented.";
+
+}
+
 /**
 * The function displays the proper way the program is supposed to be used.
 */
